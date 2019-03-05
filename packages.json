@@ -1,0 +1,112 @@
+{
+    "packageId": "6d96c54f7e1a08",
+    "name": "key management",
+    "description": "management of keys",
+    "buttons": [
+        {
+            "buttonId": "e9c421f4451d98",
+            "name": "key instruction",
+            "description": "a residents instruction to release keys",
+            "type": "action",
+            "questions": [
+                {
+                    "question": "who are you releasing to?",
+                    "type": "freetext",
+                    "values": {
+                        "format": "small",
+                        "description": "Please provide us the name of the person or company who will be collecting your keys"
+                    },
+                    "validators": [],
+                    "compulsory": true,
+                    "questionId": "2e7feb03c87cee",
+                    "number": 1
+                },
+                {
+                    "question": "when are you expecting them to come?",
+                    "type": "datetime",
+                    "values": {
+                        "options": [
+                            "time",
+                            "date"
+                        ],
+                        "description": "please provide us with a rough estimate of when you expect them",
+                        "dateconstraint": {},
+                        "timeconstraint": {}
+                    },
+                    "validators": [],
+                    "compulsory": true,
+                    "questionId": "1ac6b2af337de1",
+                    "number": 2
+                },
+                {
+                    "question": "recipient's number",
+                    "type": "freetext",
+                    "values": {
+                        "format": "sms",
+                        "description": "Please provide a contact number for the recipient (so we can chase up keys if required)"
+                    },
+                    "validators": [],
+                    "compulsory": true,
+                    "questionId": "2688714390dcec",
+                    "number": 3
+                }
+            ],
+            "navigation": {
+                "id": "2e7feb03c87cee",
+                "type": "node",
+                "parent": null,
+                "children": [
+                    {
+                        "id": "1ac6b2af337de1",
+                        "type": "node",
+                        "parent": "2e7feb03c87cee",
+                        "children": [
+                            {
+                                "id": "2688714390dcec",
+                                "type": "node",
+                                "parent": "1ac6b2af337de1",
+                                "children": [
+                                    {
+                                        "id": "d96352923dfd58",
+                                        "type": "node",
+                                        "parent": "2688714390dcec",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "webhooks": [
+                {
+                    "name": "key instructions",
+                    "type": "log",
+                    "url": "https://[buttonkit]/api/v1/datastore/log",
+                    "method": "POST",
+                    "contentType": "json",
+                    "parameters": {
+                        "dynamic": {
+                            "presser": [
+                                {
+                                    "id": "d96352923dfd58_presser",
+                                    "type": "presser"
+                                }
+                            ],
+                            "pressed": [
+                                {
+                                    "id": "d96352923dfd58_pressed",
+                                    "type": "pressed"
+                                }
+                            ]
+                        },
+                        "static": {
+                            "_datastorename": "keyinstructions"
+                        }
+                    },
+                    "webhookId": "d96352923dfd58"
+                }
+            ]
+        }
+    ]
+}
