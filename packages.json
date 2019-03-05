@@ -1,5 +1,5 @@
 {
-    "packageId": "6d96c54f7e1a08",
+    "packageId": "1c5b3cbbffc165",
     "name": "key management",
     "description": "management of keys",
     "buttons": [
@@ -49,6 +49,20 @@
                     "compulsory": true,
                     "questionId": "2688714390dcec",
                     "number": 3
+                },
+                {
+                    "question": "pickup code",
+                    "type": "serverfunction",
+                    "values": {
+                        "url": "https://[buttonkit]/api/v1/unique",
+                        "method": "POST",
+                        "responseType": "text",
+                        "description": "this code will be sent to the person collecting your keys"
+                    },
+                    "validators": [],
+                    "compulsory": true,
+                    "questionId": "1ecad0d323bb31",
+                    "number": 4
                 }
             ],
             "navigation": {
@@ -67,14 +81,24 @@
                                 "parent": "1ac6b2af337de1",
                                 "children": [
                                     {
-                                        "id": "d96352923dfd58",
+                                        "id": "1ecad0d323bb31",
                                         "type": "node",
                                         "parent": "2688714390dcec",
-                                        "children": []
+                                        "children": [
+                                            {
+                                                "id": "d96352923dfd58",
+                                                "type": "node",
+                                                "parent": "1ecad0d323bb31",
+                                                "children": []
+                                            }
+                                        ],
+                                        "rules": []
                                     }
-                                ]
+                                ],
+                                "rules": []
                             }
-                        ]
+                        ],
+                        "rules": []
                     }
                 ]
             },
