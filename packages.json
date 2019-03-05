@@ -1,5 +1,5 @@
 {
-    "packageId": "c9cd2a165e0df",
+    "packageId": "2ac4fd179d1802",
     "name": "key management",
     "description": "management of keys",
     "buttons": [
@@ -89,7 +89,8 @@
                                                 "id": "d96352923dfd58",
                                                 "type": "node",
                                                 "parent": "1ecad0d323bb31",
-                                                "children": []
+                                                "children": [],
+                                                "rules": []
                                             }
                                         ],
                                         "rules": []
@@ -214,11 +215,14 @@
                                         "id": "1f849cf176bb11",
                                         "type": "node",
                                         "parent": "29ab4a3d983b38",
-                                        "children": []
+                                        "children": [],
+                                        "rules": []
                                     }
-                                ]
+                                ],
+                                "rules": []
                             }
-                        ]
+                        ],
+                        "rules": []
                     }
                 ]
             },
@@ -359,7 +363,8 @@
                                         "id": "c40b18cf030bd",
                                         "type": "node",
                                         "parent": "2841ece345d0b6",
-                                        "children": []
+                                        "children": [],
+                                        "rules": []
                                     }
                                 ],
                                 "rules": [
@@ -385,7 +390,8 @@
                                     }
                                 ]
                             }
-                        ]
+                        ],
+                        "rules": []
                     }
                 ]
             },
@@ -484,15 +490,21 @@
                         "storeId": "keysreturned",
                         "schema": [
                             {
-                                "id": "29ab4a3d983b38_presser",
-                                "path": "4a1a1c30aaee58,29ab4a3d983b38_presser",
-                                "alias": "owner",
+                                "id": "d96352923dfd58_presser",
+                                "path": "4a1a1c30aaee58,2e2c6026017b3a,d96352923dfd58_presser",
+                                "alias": "resident",
                                 "default": ""
                             },
                             {
                                 "id": "29ab4a3d983b38_pressed",
                                 "path": "4a1a1c30aaee58,29ab4a3d983b38_pressed",
                                 "alias": "instructed",
+                                "default": ""
+                            },
+                            {
+                                "id": "2e7feb03c87cee",
+                                "path": "4a1a1c30aaee58,2e2c6026017b3a,2e7feb03c87cee",
+                                "alias": "recipient",
                                 "default": ""
                             },
                             {
@@ -505,12 +517,6 @@
                                 "id": "2841ece345d0b6_pressed",
                                 "path": "2841ece345d0b6_pressed",
                                 "alias": "returned",
-                                "default": ""
-                            },
-                            {
-                                "id": "2e7feb03c87cee",
-                                "path": "4a1a1c30aaee58,2e2c6026017b3a,2e7feb03c87cee",
-                                "alias": "recipient",
                                 "default": ""
                             }
                         ],
