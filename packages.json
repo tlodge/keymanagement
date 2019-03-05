@@ -1,5 +1,5 @@
 {
-    "packageId": "f123ed1b11b04",
+    "packageId": "13728a4ac94664",
     "name": "key management",
     "description": "management of keys",
     "buttons": [
@@ -94,7 +94,8 @@
                                                         "id": "25611ddb9d7db",
                                                         "type": "node",
                                                         "parent": "d96352923dfd58",
-                                                        "children": []
+                                                        "children": [],
+                                                        "rules": []
                                                     }
                                                 ],
                                                 "rules": []
@@ -272,7 +273,14 @@
                                         "id": "1f849cf176bb11",
                                         "type": "node",
                                         "parent": "29ab4a3d983b38",
-                                        "children": [],
+                                        "children": [
+                                            {
+                                                "id": "eab3b266643ad8",
+                                                "type": "node",
+                                                "parent": "1f849cf176bb11",
+                                                "children": []
+                                            }
+                                        ],
                                         "rules": []
                                     }
                                 ],
@@ -327,6 +335,41 @@
                         }
                     },
                     "webhookId": "1f849cf176bb11"
+                },
+                {
+                    "name": "notify endpoint",
+                    "type": "notify",
+                    "url": "https://[buttonkit]/api/v1/send",
+                    "method": "POST",
+                    "parameters": {
+                        "dynamic": {
+                            "recipients": [
+                                {
+                                    "id": "2e2c6026017b3a",
+                                    "type": "question",
+                                    "answer": {
+                                        "path": "d96352923dfd58_presser"
+                                    }
+                                }
+                            ],
+                            "placeholders": []
+                        },
+                        "static": {
+                            "email": {
+                                "subject": "key has been picked up",
+                                "body": "key has been picked up"
+                            },
+                            "sms": {
+                                "body": "key has been picked up"
+                            },
+                            "message": {
+                                "subject": "key has been picked up",
+                                "body": "key has been picked up"
+                            },
+                            "recipients": []
+                        }
+                    },
+                    "webhookId": "eab3b266643ad8"
                 }
             ]
         },
