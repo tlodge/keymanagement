@@ -1,5 +1,5 @@
 {
-    "packageId": "2ac4fd179d1802",
+    "packageId": "f123ed1b11b04",
     "name": "key management",
     "description": "management of keys",
     "buttons": [
@@ -89,7 +89,14 @@
                                                 "id": "d96352923dfd58",
                                                 "type": "node",
                                                 "parent": "1ecad0d323bb31",
-                                                "children": [],
+                                                "children": [
+                                                    {
+                                                        "id": "25611ddb9d7db",
+                                                        "type": "node",
+                                                        "parent": "d96352923dfd58",
+                                                        "children": []
+                                                    }
+                                                ],
                                                 "rules": []
                                             }
                                         ],
@@ -130,6 +137,56 @@
                         }
                     },
                     "webhookId": "d96352923dfd58"
+                },
+                {
+                    "name": "notify endpoint",
+                    "type": "notify",
+                    "url": "https://[buttonkit]/api/v1/send",
+                    "method": "POST",
+                    "parameters": {
+                        "dynamic": {
+                            "recipients": [
+                                {
+                                    "id": "2688714390dcec",
+                                    "type": "question",
+                                    "answer": {}
+                                }
+                            ],
+                            "placeholders": [
+                                {
+                                    "id": "presser:surname",
+                                    "key": "surname",
+                                    "type": "presser"
+                                },
+                                {
+                                    "id": "presser:firstname",
+                                    "key": "firstname",
+                                    "type": "presser"
+                                },
+                                {
+                                    "id": "1ecad0d323bb31",
+                                    "qid": "1ecad0d323bb31",
+                                    "key": "value",
+                                    "type": "question"
+                                }
+                            ]
+                        },
+                        "static": {
+                            "email": {
+                                "subject": "",
+                                "body": ""
+                            },
+                            "sms": {
+                                "body": "you can pick up [presser:firstname][presser:surname]'s keys using code [1ecad0d323bb31]"
+                            },
+                            "message": {
+                                "subject": "",
+                                "body": ""
+                            },
+                            "recipients": []
+                        }
+                    },
+                    "webhookId": "25611ddb9d7db"
                 }
             ]
         },
