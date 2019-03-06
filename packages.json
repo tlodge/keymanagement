@@ -1,5 +1,5 @@
 {
-    "packageId": "2760ba6168c66",
+    "packageId": "17d2181e5e0f8b",
     "name": "key management",
     "description": "management of keys",
     "buttons": [
@@ -273,7 +273,14 @@
                                         "id": "29ab4a3d983b38",
                                         "type": "node",
                                         "parent": "eab3b266643ad8",
-                                        "children": [],
+                                        "children": [
+                                            {
+                                                "id": "2c08618935b794",
+                                                "type": "node",
+                                                "parent": "29ab4a3d983b38",
+                                                "children": []
+                                            }
+                                        ],
                                         "rules": []
                                     }
                                 ],
@@ -346,6 +353,23 @@
                         }
                     },
                     "webhookId": "eab3b266643ad8"
+                },
+                {
+                    "name": "delete log item",
+                    "type": "deletelogitem",
+                    "url": "https://[buttonkit]/api/v1/datastore/delete/question",
+                    "method": "POST",
+                    "parameters": {
+                        "dynamic": {
+                            "ids": [
+                                "2e2c6026017b3a"
+                            ]
+                        },
+                        "static": {
+                            "questionId": "2e2c6026017b3a"
+                        }
+                    },
+                    "webhookId": "2c08618935b794"
                 }
             ]
         },
